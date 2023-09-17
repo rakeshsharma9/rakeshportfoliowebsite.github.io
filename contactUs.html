@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contact</title>
+
+  <link rel="icon" href="img/44ac916857d440f73987abb3677c3383.jpg">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  
+  <nav class="navbar">
+    <a href="home.html"><i class="fas fa-home"></i> <span>home</span></a>
+    <a href="about.html"><i class="fas fa-user"></i> <span>about</span></a>
+    <a href="portfolio.html"><i class="fas fa-briefcase"></i> <span>portfolio</span></a>
+    <a href="blogs.html"><i class="fas fa-blog"></i> <span>blogs</span></a>
+    <a href="contactUs.html"><i class="fas fa-address-book"></i> <span>contact</span></a>
+  </nav>
+
+  <section class="contact">
+
+    <h1 class="heading"> contact <span> me </span> </h1>
+
+    <div class="row">
+
+      <div class="info-container">
+
+        <h1>get in touch</h1>
+
+        <div class="box-container">
+
+          <div class="box">
+            <i class="fas fa-envelope"></i>
+            <div class="info">
+              <h3>Email</h3>
+              <p>rakeshsharma1.0@outlook.com</p>
+              <a href="mailto:rakeshsharma1.0@outlook.com" class="btn">send a message</a>
+            </div>
+          </div>
+
+          <br><br>
+
+          <div class="box">
+            <i class="fas fa-phone"></i>
+            <div class="info">
+              <h3>Whatsapp</h3>
+              <p>+919464241230</p>
+              <a href="https://api.whatsapp.com/send?phone=919464241230" class="btn">Send a Message</a>
+            </div>
+          </div>
+
+        </div>
+
+        <br>
+        <div class="share">
+          <a href="#" class="fas fa-facebook-f"></a>
+          <a href="#" class="fas fa-twitter"></a>
+          <a href="#" class="fas fa-instagram"></a>
+          <a href="#" class="fas fa-linkedin"></a>
+        </div>
+
+      </div>
+
+      <form onsubmit="sendEmail(); reset(); return false;">
+
+        <div class="inputBox">
+          <input type="text" id="name" placeholder="Full Name">
+          <input type="number" placeholder="Contact No.">
+        </div>
+
+        <div class="inputBox">
+          <input type="email" id="email" placeholder="Your Email">
+          <input type="text" id="subject" placeholder="Subject">
+        </div>
+
+        <textarea id="message" placeholder="Your message" id="" cols="30" rows="10"></textarea>
+
+        <input type="submit" value="Send Message" class="btn">
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function sendEmail(){
+      Email.send({
+        SecureToken : "921502b6-c2e5-4135-ad0f-d87275e7dacf",
+        To : 'mukeshmax713@gmail.com',
+        From : document.getElementById("email").value,
+        Subject : "email from portfolio website",
+        Body : "And this is the body"
+      }).then(
+         message => alert("message send succesfully") 
+      );
+    }
+  </script>
+
+</body>
+</html>

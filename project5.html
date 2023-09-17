@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>project5</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <a href="project5.html"></a>
+
+    <div class="project5">
+      <h1>calculator</h1>
+      <div class="calculator">
+       <div class="screen"></div>
+        <div class="buttons">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button>0</button>
+          <button>-</button>
+          <button>+</button>
+          <button>/</button>
+          <button>%</button>
+          <button>*</button>
+          <button>.</button>
+          <button>+/-</button>
+          <button>clear</button>
+          <button>=</button>
+        </div>
+      </div>
+  </div>
+
+</body>
+
+<script>
+
+const screen = document.querySelector(".screen")
+
+const buttons = document.querySelectorAll("button")
+
+let keyvalue= [];
+let calculation;
+function calculate(button){
+    const value = button.textContent;
+    if(value === 'clear'){
+        screen.textContent = '.';
+        keyvalue = [];
+    }
+   
+    else if(value === "="){
+       screen.textContent = eval(calculation)
+    }
+
+    else {
+        keyvalue.push(value)
+        calculation=keyvalue.join('')
+
+
+        screen.textContent=keyvalue.join('')
+    }
+}
+
+buttons.forEach(button=>{
+    button.addEventListener("click", ()=>{
+        calculate(button)
+    })
+})
+
+</script>
